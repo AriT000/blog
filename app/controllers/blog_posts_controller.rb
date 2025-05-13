@@ -1,6 +1,6 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: %i[ show edit update destroy ]
-
+  before_action :authorize_admin!, except: %i[ show index ]
   # GET /blog_posts or /blog_posts.json
   def index
     @blog_posts = BlogPost.all
@@ -60,7 +60,7 @@ class BlogPostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog_post
-      @blog_post = BlogPost.find(params.expect(:id))
+      @blog_post = BlogPost.friendly.find(params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.

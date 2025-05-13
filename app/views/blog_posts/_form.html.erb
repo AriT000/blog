@@ -4,8 +4,8 @@
       <h2><%= pluralize(blog_post.errors.count, "error") %> prohibited this blog_post from being saved:</h2>
 
       <ul class="list-disc ml-6">
-        <% blog_post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% blog_post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
