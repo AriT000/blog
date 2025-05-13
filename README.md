@@ -12,7 +12,7 @@
 - Set a password (`sudo -u postgres psql -c "\password postgres"`)  
 
 3. Clone repo/set up app  
-- clone the repo (`sudo -u postgres psql -c "\password postgres"`)  
+- clone the repo (`git clone https://github.com/AriT000/Blog.git"`)  
 - cd into it (`cd blog`)  
 - bundle install  
 
